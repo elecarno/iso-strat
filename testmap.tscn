@@ -1,0 +1,1360 @@
+[gd_scene load_steps=64 format=3 uid="uid://bqnkeip6sksof"]
+
+[ext_resource type="Texture2D" uid="uid://leyr6cim1kd0" path="res://test_tileset.png" id="1_0uvqh"]
+[ext_resource type="Script" path="res://main_scripts/player_controller.gd" id="1_b4lyt"]
+[ext_resource type="Texture2D" uid="uid://dppid3v8bopgs" path="res://ocean.png" id="1_wf6ok"]
+[ext_resource type="Script" path="res://main_scripts/nation.gd" id="3_obyrv"]
+[ext_resource type="Texture2D" uid="uid://bkutxss2n88p8" path="res://selection.png" id="4_4c1nb"]
+[ext_resource type="Texture2D" uid="uid://b1ommrpnxfxav" path="res://ui/ui_main.png" id="4_7an5g"]
+[ext_resource type="Texture2D" uid="uid://b4sujl1lmr36m" path="res://territory_tileset.png" id="5_bggp6"]
+[ext_resource type="Texture2D" uid="uid://bcyl4a3j4ql1p" path="res://selection_tall.png" id="5_gq3p3"]
+[ext_resource type="Texture2D" uid="uid://c8w7dnj1vtp35" path="res://territory_tileset_b.png" id="6_gy4be"]
+[ext_resource type="Script" path="res://main_scripts/camera.gd" id="6_qgcfw"]
+[ext_resource type="Theme" uid="uid://bcuc2y0om4e0o" path="res://ui/ui_theme.tres" id="7_ppt5l"]
+[ext_resource type="Script" path="res://main_scripts/gui_controller.gd" id="7_t4wpl"]
+[ext_resource type="Texture2D" uid="uid://oxelwgo8goxq" path="res://ui/theme/frame.png" id="8_c6jly"]
+[ext_resource type="Texture2D" uid="uid://ba3pxaj2xtbl2" path="res://ui/theme/timestamp_tooltip.png" id="9_gqipu"]
+[ext_resource type="Texture2D" uid="uid://djd68f13oc7dh" path="res://ui/flags/czech.png" id="10_g3g2t"]
+[ext_resource type="Script" path="res://main_scripts/tooltip.gd" id="13_4ll28"]
+[ext_resource type="Texture2D" uid="uid://gwhpd0snv6nh" path="res://ui/time_control/plus_button.png" id="15_0swji"]
+[ext_resource type="Texture2D" uid="uid://dwttkq8rw2lnp" path="res://ui/time_control/plus_button_pressed.png" id="16_6qo23"]
+[ext_resource type="Texture2D" uid="uid://b6r6sruha3a74" path="res://ui/time_control/plus_button_hover.png" id="17_x5i0e"]
+[ext_resource type="Texture2D" uid="uid://cju7gkommojel" path="res://ui/time_control/minus_button.png" id="18_qy5od"]
+[ext_resource type="Texture2D" uid="uid://cqf1ck7ymn515" path="res://ui/time_control/minus_button_pressed.png" id="19_0jycx"]
+[ext_resource type="Texture2D" uid="uid://bp6niggp2bt0y" path="res://ui/time_control/minus_button_hover.png" id="20_io30d"]
+[ext_resource type="ButtonGroup" uid="uid://b54umhfvobivy" path="res://ui/toolbar/build_menu/build_buttons.tres" id="22_xeedy"]
+[ext_resource type="ButtonGroup" uid="uid://lt5ioptm44io" path="res://ui/toolbar/toolbar_buttons.tres" id="22_yguin"]
+[ext_resource type="Texture2D" uid="uid://dxijwerq37h8k" path="res://ui/toolbar/build_normal.png" id="23_tx3r0"]
+[ext_resource type="Texture2D" uid="uid://c3hvrh4lbp6g1" path="res://ui/toolbar/build_pressed.png" id="24_l22uy"]
+[ext_resource type="Texture2D" uid="uid://dhae7o4km8j5p" path="res://ui/toolbar/build_hover.png" id="25_woi3f"]
+[ext_resource type="Script" path="res://ui/ui_scripts/build_menu.gd" id="26_23yrg"]
+[ext_resource type="Texture2D" uid="uid://dkhtnofd2xgkw" path="res://ui/toolbar/research_normal.png" id="26_cvkgo"]
+[ext_resource type="Texture2D" uid="uid://ys07lmgbegwu" path="res://ui/toolbar/build_menu/build_panel.png" id="27_0brow"]
+[ext_resource type="Texture2D" uid="uid://cdk2752ui0e8p" path="res://ui/toolbar/research_pressed.png" id="27_hmv6k"]
+[ext_resource type="Texture2D" uid="uid://cuom0qaftgoks" path="res://ui/toolbar/build_menu/building_normal.png" id="27_k7o30"]
+[ext_resource type="Texture2D" uid="uid://cxqvh6pqfsnd1" path="res://ui/toolbar/build_menu/building_pressed.png" id="28_gesqh"]
+[ext_resource type="Texture2D" uid="uid://b0pwlyrdvgtp7" path="res://ui/toolbar/research_hover.png" id="28_xd32d"]
+[ext_resource type="Texture2D" uid="uid://cujle8aykmt7n" path="res://ui/toolbar/build_menu/building_hover.png" id="29_tuxie"]
+[ext_resource type="Texture2D" uid="uid://c40ii4bi5x4ns" path="res://ui/toolbar/military_normal.png" id="30_gx256"]
+[ext_resource type="Texture2D" uid="uid://cbjqd7t3bf45f" path="res://ui/toolbar/military_pressed.png" id="31_oc4p8"]
+[ext_resource type="Texture2D" uid="uid://dc2dgnuvr7rq6" path="res://ui/toolbar/military_hover.png" id="32_5hcpj"]
+[ext_resource type="Texture2D" uid="uid://du0yhqs1hyjef" path="res://ui/toolbar/build_menu/build_info_panel.png" id="32_b8oyt"]
+[ext_resource type="Script" path="res://main_scripts/building_button.gd" id="32_vrk3a"]
+[ext_resource type="Texture2D" uid="uid://da63qj2l8rmnd" path="res://ui/resource_icons/ether.png" id="33_x67at"]
+[ext_resource type="FontFile" uid="uid://dk8tn66lsfq0u" path="res://ui/theme/vcr_osd.ttf" id="34_1hpea"]
+[ext_resource type="Texture2D" uid="uid://rrck1rhwuigo" path="res://ui/resource_icons/fuel.png" id="34_t28rp"]
+[ext_resource type="Texture2D" uid="uid://8xdc1vvgpm5j" path="res://ui/resource_icons/metals.png" id="35_v2tub"]
+[ext_resource type="Texture2D" uid="uid://wmjy6rcwkrwm" path="res://ui/resource_icons/rare_metals.png" id="36_q3sod"]
+[ext_resource type="Texture2D" uid="uid://dvqilwrjk8r65" path="res://ui/resource_icons/organics.png" id="37_l2fe2"]
+[ext_resource type="Texture2D" uid="uid://dqg31hd20tgly" path="res://ui/resource_icons/commodities.png" id="38_e2mpw"]
+[ext_resource type="Texture2D" uid="uid://cep2ao5r0dbx4" path="res://ui/resource_icons/food.png" id="39_8fnc4"]
+[ext_resource type="Texture2D" uid="uid://doumjws51c57j" path="res://ui/toolbar/research_menu/research_panel.png" id="46_ge1w8"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_jplk6"]
+texture = ExtResource("1_0uvqh")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+2:0/0 = 0
+2:0/0/custom_data_0 = "hill"
+3:0/0 = 0
+3:0/0/custom_data_0 = "hill"
+1:0/0 = 0
+2:1/0 = 0
+2:1/0/custom_data_0 = "water"
+4:0/0 = 0
+4:0/0/custom_data_0 = "ground"
+1:1/0 = 0
+1:1/0/custom_data_1 = 30
+1:1/0/custom_data_7 = 3
+0:2/0 = 0
+0:2/0/z_index = 3
+0:2/0/custom_data_0 = "rail"
+0:1/0 = 0
+0:1/0/z_index = 3
+0:1/0/custom_data_0 = "rail"
+0:3/0 = 0
+0:3/0/z_index = 3
+0:3/0/custom_data_0 = "rail"
+0:4/0 = 0
+0:4/0/z_index = 3
+0:4/0/custom_data_0 = "rail"
+0:5/0 = 0
+0:5/0/z_index = 3
+0:5/0/custom_data_0 = "rail"
+0:6/0 = 0
+0:6/0/z_index = 3
+0:6/0/custom_data_0 = "rail"
+0:7/0 = 0
+0:7/0/z_index = 3
+0:7/0/custom_data_0 = "rail"
+0:8/0 = 0
+0:8/0/z_index = 3
+0:8/0/terrain_set = 0
+0:8/0/terrain = 1
+0:8/0/terrains_peering_bit/bottom_right_side = 1
+0:8/0/terrains_peering_bit/top_left_side = 1
+0:8/0/custom_data_0 = "road"
+0:9/0 = 0
+0:9/0/z_index = 3
+0:9/0/terrain_set = 0
+0:9/0/terrain = 1
+0:9/0/terrains_peering_bit/bottom_left_side = 1
+0:9/0/terrains_peering_bit/top_right_side = 1
+0:9/0/custom_data_0 = "road"
+0:10/0 = 0
+0:10/0/z_index = 3
+0:10/0/terrain_set = 0
+0:10/0/terrain = 1
+0:10/0/terrains_peering_bit/bottom_right_side = 1
+0:10/0/terrains_peering_bit/bottom_left_side = 1
+0:10/0/custom_data_0 = "road"
+0:11/0 = 0
+0:11/0/z_index = 3
+0:11/0/terrain_set = 0
+0:11/0/terrain = 1
+0:11/0/terrains_peering_bit/top_left_side = 1
+0:11/0/terrains_peering_bit/top_right_side = 1
+0:11/0/custom_data_0 = "road"
+0:12/0 = 0
+0:12/0/z_index = 3
+0:12/0/terrain_set = 0
+0:12/0/terrain = 1
+0:12/0/terrains_peering_bit/bottom_right_side = 1
+0:12/0/terrains_peering_bit/top_right_side = 1
+0:12/0/custom_data_0 = "road"
+0:13/0 = 0
+0:13/0/z_index = 3
+0:13/0/terrain_set = 0
+0:13/0/terrain = 1
+0:13/0/terrains_peering_bit/bottom_left_side = 1
+0:13/0/terrains_peering_bit/top_left_side = 1
+0:13/0/custom_data_0 = "road"
+0:14/0 = 0
+0:14/0/z_index = 3
+0:14/0/terrain_set = 0
+0:14/0/terrain = 1
+0:14/0/terrains_peering_bit/bottom_right_side = 1
+0:14/0/terrains_peering_bit/bottom_left_side = 1
+0:14/0/terrains_peering_bit/top_left_side = 1
+0:14/0/terrains_peering_bit/top_right_side = 1
+0:14/0/custom_data_0 = "road"
+3:1/0 = 0
+3:1/0/custom_data_1 = 3
+3:1/0/custom_data_8 = 2
+1:2/0 = 0
+1:2/0/custom_data_1 = 15
+1:2/0/custom_data_7 = 2
+1:3/0 = 0
+1:3/0/custom_data_1 = 10
+1:3/0/custom_data_7 = 1
+3:2/0 = 0
+3:2/0/custom_data_1 = 3
+3:2/0/custom_data_8 = 5
+4:1/0 = 0
+4:2/0 = 0
+4:3/0 = 0
+7:0/0 = 0
+5:1/0 = 0
+5:2/0 = 0
+3:3/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_chrve"]
+texture = ExtResource("5_bggp6")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+0:0/0/terrain_set = 0
+0:0/0/terrains_peering_bit/left_corner = 0
+0:0/0/terrains_peering_bit/top_corner = 0
+1:0/0 = 0
+1:0/0/terrain_set = 0
+1:0/0/terrains_peering_bit/right_corner = 0
+1:0/0/terrains_peering_bit/bottom_corner = 0
+1:0/0/terrains_peering_bit/left_corner = 0
+2:0/0 = 0
+2:0/0/terrain_set = 0
+2:0/0/terrains_peering_bit/right_corner = 0
+2:0/0/terrains_peering_bit/top_corner = 0
+2:1/0 = 0
+2:1/0/terrain_set = 0
+2:1/0/terrains_peering_bit/bottom_corner = 0
+2:1/0/terrains_peering_bit/left_corner = 0
+2:1/0/terrains_peering_bit/top_corner = 0
+2:2/0 = 0
+2:2/0/terrain_set = 0
+2:2/0/terrains_peering_bit/right_corner = 0
+2:2/0/terrains_peering_bit/bottom_corner = 0
+1:2/0 = 0
+1:2/0/terrain_set = 0
+1:2/0/terrains_peering_bit/right_corner = 0
+1:2/0/terrains_peering_bit/left_corner = 0
+1:2/0/terrains_peering_bit/top_corner = 0
+0:2/0 = 0
+0:2/0/terrain_set = 0
+0:2/0/terrains_peering_bit/bottom_corner = 0
+0:2/0/terrains_peering_bit/left_corner = 0
+0:1/0 = 0
+0:1/0/terrain_set = 0
+0:1/0/terrains_peering_bit/right_corner = 0
+0:1/0/terrains_peering_bit/bottom_corner = 0
+0:1/0/terrains_peering_bit/top_corner = 0
+1:1/0 = 0
+1:1/0/terrain_set = 0
+1:1/0/terrains_peering_bit/right_corner = 0
+1:1/0/terrains_peering_bit/bottom_corner = 0
+1:1/0/terrains_peering_bit/left_corner = 0
+1:1/0/terrains_peering_bit/top_corner = 0
+3:0/0 = 0
+3:0/0/terrain_set = 0
+3:0/0/terrains_peering_bit/right_corner = 0
+3:1/0 = 0
+3:1/0/terrain_set = 0
+3:1/0/terrains_peering_bit/top_corner = 0
+4:0/0 = 0
+4:0/0/terrain_set = 0
+4:0/0/terrains_peering_bit/bottom_corner = 0
+4:1/0 = 0
+4:1/0/terrain_set = 0
+4:1/0/terrains_peering_bit/left_corner = 0
+
+[sub_resource type="TileSet" id="TileSet_myv2x"]
+tile_shape = 1
+tile_size = Vector2i(32, 16)
+terrain_set_0/mode = 0
+terrain_set_0/terrain_0/name = "t_red"
+terrain_set_0/terrain_0/color = Color(0.980392, 0.596078, 0.568627, 1)
+terrain_set_0/terrain_1/name = "road"
+terrain_set_0/terrain_1/color = Color(0.501961, 0.501961, 0.501961, 1)
+custom_data_layer_0/name = "terrain"
+custom_data_layer_0/type = 4
+custom_data_layer_1/name = "humanity"
+custom_data_layer_1/type = 2
+custom_data_layer_2/name = "ether"
+custom_data_layer_2/type = 2
+custom_data_layer_3/name = "fuel"
+custom_data_layer_3/type = 2
+custom_data_layer_4/name = "metals"
+custom_data_layer_4/type = 2
+custom_data_layer_5/name = "rare_metals"
+custom_data_layer_5/type = 2
+custom_data_layer_6/name = "organics"
+custom_data_layer_6/type = 2
+custom_data_layer_7/name = "commodities"
+custom_data_layer_7/type = 2
+custom_data_layer_8/name = "food"
+custom_data_layer_8/type = 2
+custom_data_layer_9/name = "energy"
+custom_data_layer_9/type = 2
+custom_data_layer_10/name = "e_use"
+custom_data_layer_10/type = 2
+sources/0 = SubResource("TileSetAtlasSource_jplk6")
+sources/1 = SubResource("TileSetAtlasSource_chrve")
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_s45rv"]
+texture = ExtResource("6_gy4be")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_k6le4"]
+tile_shape = 1
+tile_size = Vector2i(32, 16)
+sources/0 = SubResource("TileSetAtlasSource_s45rv")
+
+[sub_resource type="InputEventKey" id="InputEventKey_0bg4h"]
+device = -1
+keycode = 61
+unicode = 61
+
+[sub_resource type="Shortcut" id="Shortcut_1gk37"]
+events = [SubResource("InputEventKey_0bg4h")]
+
+[sub_resource type="InputEventKey" id="InputEventKey_c0dr0"]
+device = -1
+keycode = 45
+unicode = 45
+
+[sub_resource type="Shortcut" id="Shortcut_uj8gq"]
+events = [SubResource("InputEventKey_c0dr0")]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_h06s7"]
+bg_color = Color(0.592157, 0.0627451, 0.0705882, 0.721569)
+border_width_left = 2
+border_width_bottom = 2
+border_color = Color(0.8, 0.384314, 0.384314, 0.733333)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_40pm2"]
+atlas = ExtResource("1_0uvqh")
+region = Rect2(32, 96, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pcra2"]
+atlas = ExtResource("1_0uvqh")
+region = Rect2(96, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8rr7f"]
+atlas = ExtResource("1_0uvqh")
+region = Rect2(96, 96, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_c21a3"]
+atlas = ExtResource("1_0uvqh")
+region = Rect2(128, 32, 32, 32)
+
+[node name="map" type="Node2D"]
+position = Vector2(-1, 0)
+script = ExtResource("1_b4lyt")
+
+[node name="ocean" type="Node2D" parent="."]
+position = Vector2(3840, -8)
+
+[node name="ocean_sprite" type="Sprite2D" parent="ocean"]
+texture = ExtResource("1_wf6ok")
+centered = false
+
+[node name="ocean_sprite2" type="Sprite2D" parent="ocean/ocean_sprite"]
+position = Vector2(1280, 640)
+texture = ExtResource("1_wf6ok")
+centered = false
+
+[node name="ocean_sprite2" type="Sprite2D" parent="ocean/ocean_sprite/ocean_sprite2"]
+position = Vector2(1280, 640)
+texture = ExtResource("1_wf6ok")
+centered = false
+
+[node name="ocean_sprite2" type="Sprite2D" parent="ocean/ocean_sprite/ocean_sprite2/ocean_sprite2"]
+position = Vector2(1280, 640)
+texture = ExtResource("1_wf6ok")
+centered = false
+
+[node name="ocean_sprite2" type="Sprite2D" parent="ocean/ocean_sprite/ocean_sprite2/ocean_sprite2/ocean_sprite2"]
+position = Vector2(1280, 640)
+texture = ExtResource("1_wf6ok")
+centered = false
+
+[node name="ocean_sprite2" type="Sprite2D" parent="ocean/ocean_sprite/ocean_sprite2/ocean_sprite2/ocean_sprite2/ocean_sprite2"]
+position = Vector2(1280, 640)
+texture = ExtResource("1_wf6ok")
+centered = false
+
+[node name="ocean_sprite2" type="Sprite2D" parent="ocean"]
+position = Vector2(-960, 480)
+texture = ExtResource("1_wf6ok")
+centered = false
+
+[node name="ocean_sprite2" type="Sprite2D" parent="ocean/ocean_sprite2"]
+position = Vector2(1280, 640)
+texture = ExtResource("1_wf6ok")
+centered = false
+
+[node name="ocean_sprite2" type="Sprite2D" parent="ocean/ocean_sprite2/ocean_sprite2"]
+position = Vector2(1280, 640)
+texture = ExtResource("1_wf6ok")
+centered = false
+
+[node name="ocean_sprite2" type="Sprite2D" parent="ocean/ocean_sprite2/ocean_sprite2/ocean_sprite2"]
+position = Vector2(1280, 640)
+texture = ExtResource("1_wf6ok")
+centered = false
+
+[node name="ocean_sprite2" type="Sprite2D" parent="ocean/ocean_sprite2/ocean_sprite2/ocean_sprite2/ocean_sprite2"]
+position = Vector2(1280, 640)
+texture = ExtResource("1_wf6ok")
+centered = false
+
+[node name="ocean_sprite2" type="Sprite2D" parent="ocean/ocean_sprite2/ocean_sprite2/ocean_sprite2/ocean_sprite2/ocean_sprite2"]
+position = Vector2(1280, 640)
+texture = ExtResource("1_wf6ok")
+centered = false
+
+[node name="ocean_sprite3" type="Sprite2D" parent="ocean"]
+position = Vector2(-1920, 960)
+texture = ExtResource("1_wf6ok")
+centered = false
+
+[node name="ocean_sprite2" type="Sprite2D" parent="ocean/ocean_sprite3"]
+position = Vector2(1280, 640)
+texture = ExtResource("1_wf6ok")
+centered = false
+
+[node name="ocean_sprite2" type="Sprite2D" parent="ocean/ocean_sprite3/ocean_sprite2"]
+position = Vector2(1280, 640)
+texture = ExtResource("1_wf6ok")
+centered = false
+
+[node name="ocean_sprite2" type="Sprite2D" parent="ocean/ocean_sprite3/ocean_sprite2/ocean_sprite2"]
+position = Vector2(1280, 640)
+texture = ExtResource("1_wf6ok")
+centered = false
+
+[node name="ocean_sprite2" type="Sprite2D" parent="ocean/ocean_sprite3/ocean_sprite2/ocean_sprite2/ocean_sprite2"]
+position = Vector2(1280, 640)
+texture = ExtResource("1_wf6ok")
+centered = false
+
+[node name="ocean_sprite2" type="Sprite2D" parent="ocean/ocean_sprite3/ocean_sprite2/ocean_sprite2/ocean_sprite2/ocean_sprite2"]
+position = Vector2(1280, 640)
+texture = ExtResource("1_wf6ok")
+centered = false
+
+[node name="ocean_sprite4" type="Sprite2D" parent="ocean"]
+position = Vector2(-2880, 1440)
+texture = ExtResource("1_wf6ok")
+centered = false
+
+[node name="ocean_sprite2" type="Sprite2D" parent="ocean/ocean_sprite4"]
+position = Vector2(1280, 640)
+texture = ExtResource("1_wf6ok")
+centered = false
+
+[node name="ocean_sprite2" type="Sprite2D" parent="ocean/ocean_sprite4/ocean_sprite2"]
+position = Vector2(1280, 640)
+texture = ExtResource("1_wf6ok")
+centered = false
+
+[node name="ocean_sprite2" type="Sprite2D" parent="ocean/ocean_sprite4/ocean_sprite2/ocean_sprite2"]
+position = Vector2(1280, 640)
+texture = ExtResource("1_wf6ok")
+centered = false
+
+[node name="ocean_sprite2" type="Sprite2D" parent="ocean/ocean_sprite4/ocean_sprite2/ocean_sprite2/ocean_sprite2"]
+position = Vector2(1280, 640)
+texture = ExtResource("1_wf6ok")
+centered = false
+
+[node name="ocean_sprite2" type="Sprite2D" parent="ocean/ocean_sprite4/ocean_sprite2/ocean_sprite2/ocean_sprite2/ocean_sprite2"]
+position = Vector2(1280, 640)
+texture = ExtResource("1_wf6ok")
+centered = false
+
+[node name="ocean_sprite5" type="Sprite2D" parent="ocean"]
+position = Vector2(-3840, 1920)
+texture = ExtResource("1_wf6ok")
+centered = false
+
+[node name="ocean_sprite2" type="Sprite2D" parent="ocean/ocean_sprite5"]
+position = Vector2(1280, 640)
+texture = ExtResource("1_wf6ok")
+centered = false
+
+[node name="ocean_sprite2" type="Sprite2D" parent="ocean/ocean_sprite5/ocean_sprite2"]
+position = Vector2(1280, 640)
+texture = ExtResource("1_wf6ok")
+centered = false
+
+[node name="ocean_sprite2" type="Sprite2D" parent="ocean/ocean_sprite5/ocean_sprite2/ocean_sprite2"]
+position = Vector2(1280, 640)
+texture = ExtResource("1_wf6ok")
+centered = false
+
+[node name="ocean_sprite2" type="Sprite2D" parent="ocean/ocean_sprite5/ocean_sprite2/ocean_sprite2/ocean_sprite2"]
+position = Vector2(1280, 640)
+texture = ExtResource("1_wf6ok")
+centered = false
+
+[node name="ocean_sprite2" type="Sprite2D" parent="ocean/ocean_sprite5/ocean_sprite2/ocean_sprite2/ocean_sprite2/ocean_sprite2"]
+position = Vector2(1280, 640)
+texture = ExtResource("1_wf6ok")
+centered = false
+
+[node name="nations" type="Node2D" parent="."]
+
+[node name="czechia" type="Node2D" parent="nations"]
+script = ExtResource("3_obyrv")
+is_client_controlled = true
+is_player_controlled = true
+nation_name = "Czech Imperium"
+
+[node name="slovakia" type="Node2D" parent="nations"]
+script = ExtResource("3_obyrv")
+territory_tile = Vector2i(1, 0)
+
+[node name="Node2D" type="Node2D" parent="."]
+
+[node name="tilemap" type="TileMap" parent="."]
+y_sort_enabled = true
+texture_filter = 1
+tile_set = SubResource("TileSet_myv2x")
+format = 2
+layer_0/name = "ground"
+layer_0/y_sort_enabled = true
+layer_0/tile_data = PackedInt32Array(5505199, 262144, 0, 5570734, 262144, 0, 5505198, 262144, 0, 5570733, 262144, 0, 5636269, 262144, 0, 5701805, 262144, 0, 5767341, 262144, 0, 5832876, 262144, 0, 5898412, 262144, 0, 5963947, 262144, 0, 6029483, 262144, 0, 5963946, 262144, 0, 6029482, 262144, 0, 6095017, 262144, 0, 6160553, 262144, 0, 6160552, 262144, 0, 6226087, 262144, 0, 6291623, 262144, 0, 6619301, 262144, 0, 6684837, 262144, 0, 6750372, 262144, 0, 6815909, 262144, 0, 6881444, 262144, 0, 6946981, 262144, 0, 7012517, 262144, 0, 7078053, 262144, 0, 7143589, 262144, 0, 7209126, 262144, 0, 7274662, 262144, 0, 7340199, 262144, 0, 7274663, 262144, 0, 7405735, 262144, 0, 7340200, 262144, 0, 7274664, 262144, 0, 7209129, 262144, 0, 7274665, 262144, 0, 7340202, 262144, 0, 7274666, 262144, 0, 7340203, 262144, 0, 7274667, 262144, 0, 7340204, 262144, 0, 7274668, 262144, 0, 7209132, 262144, 0, 7143596, 262144, 0, 7078061, 262144, 0, 7012525, 262144, 0, 6946990, 262144, 0, 6881454, 262144, 0, 6815918, 262144, 0, 6750382, 262144, 0, 6684846, 262144, 0, 6619310, 262144, 0, 6553774, 262144, 0, 6488238, 262144, 0, 6422703, 262144, 0, 6357166, 262144, 0, 6291631, 262144, 0, 6226095, 262144, 0, 6160560, 262144, 0, 6095023, 262144, 0, 6029488, 262144, 0, 5963952, 262144, 0, 5898416, 262144, 0, 5832880, 262144, 0, 5767345, 262144, 0, 5701808, 262144, 0, 5636273, 262144, 0, 5570737, 262144, 0, 5505201, 262144, 0, 5439664, 262144, 0, 5374129, 262144, 0, 5308593, 262144, 0, 5243058, 262144, 0, 5177522, 262144, 0, 5111986, 262144, 0, 5177521, 262144, 0, 5111985, 262144, 0, 5177520, 262144, 0, 5243056, 262144, 0, 5308592, 262144, 0, 5374128, 262144, 0, 5439663, 262144, 0, 5374127, 262144, 0, 5439662, 262144, 0, 5243057, 262144, 0, 6226088, 262144, 0, 6291624, 262144, 0, 6357159, 262144, 0, 6422695, 262144, 0, 6488230, 262144, 0, 6553766, 262144, 0, 6488233, 262144, 0, 6422698, 262144, 0, 6357162, 262144, 0, 6291627, 262144, 0, 6226091, 262144, 0, 6160556, 262144, 0, 6095020, 262144, 0, 6029485, 262144, 0, 5963949, 262144, 0, 5898414, 262144, 0, 5832878, 262144, 0, 5767343, 262144, 0, 5701807, 262144, 0, 5636272, 262144, 0, 5570736, 262144, 0, 5505200, 262144, 0, 5570735, 262144, 0, 5636271, 262144, 0, 5701806, 262144, 0, 5636270, 262144, 0, 5767342, 262144, 0, 5832877, 262144, 0, 5898413, 262144, 0, 5963948, 262144, 0, 6029484, 262144, 0, 6095019, 262144, 0, 6160555, 262144, 0, 6095018, 262144, 0, 6160554, 262144, 0, 6226089, 262144, 0, 6291625, 262144, 0, 6422696, 262144, 0, 6488231, 262144, 0, 6553767, 262144, 0, 6619302, 262144, 0, 6684838, 262144, 0, 6750373, 262144, 0, 6815910, 262144, 0, 6750374, 262144, 0, 6684839, 262144, 0, 6619303, 262144, 0, 6553768, 262144, 0, 6488232, 262144, 0, 6422697, 262144, 0, 6357161, 262144, 0, 6291626, 262144, 0, 6226090, 262144, 0, 6553769, 262144, 0, 6619304, 262144, 0, 6684840, 262144, 0, 6750375, 262144, 0, 6815911, 262144, 0, 6881446, 262144, 0, 6946982, 262144, 0, 6881445, 262144, 0, 7012518, 262144, 0, 6946983, 262144, 0, 6881447, 262144, 0, 6815912, 262144, 0, 6750376, 262144, 0, 6684841, 262144, 0, 6619305, 262144, 0, 6553770, 262144, 0, 6488234, 262144, 0, 6422699, 262144, 0, 6357163, 262144, 0, 6291628, 262144, 0, 6226092, 262144, 0, 6160557, 262144, 0, 6095021, 262144, 0, 6029486, 262144, 0, 5963950, 262144, 0, 5898415, 262144, 0, 5832879, 262144, 0, 5767344, 262144, 0, 5963951, 262144, 0, 6029487, 262144, 0, 6095022, 262144, 0, 6160558, 262144, 0, 6226093, 262144, 0, 6291629, 262144, 0, 6357164, 262144, 0, 6422700, 262144, 0, 6488235, 262144, 0, 6553771, 262144, 0, 6619306, 262144, 0, 6684842, 262144, 0, 6750377, 262144, 0, 6815913, 262144, 0, 6881448, 262144, 0, 6946984, 262144, 0, 7012519, 262144, 0, 7078055, 262144, 0, 7143590, 262144, 0, 7078054, 262144, 0, 7209127, 262144, 0, 7143591, 262144, 0, 7078056, 262144, 0, 7012520, 262144, 0, 6946985, 262144, 0, 6881449, 262144, 0, 6815914, 262144, 0, 6750378, 262144, 0, 6684843, 262144, 0, 6619307, 262144, 0, 6488236, 262144, 0, 6422701, 262144, 0, 6357165, 262144, 0, 6291630, 262144, 0, 6226094, 262144, 0, 6160559, 262144, 0, 6422702, 262144, 0, 6488237, 262144, 0, 6553773, 262144, 0, 6619308, 262144, 0, 6684844, 262144, 0, 6750379, 262144, 0, 6815915, 262144, 0, 6881450, 262144, 0, 6946986, 262144, 0, 7012521, 262144, 0, 7078057, 262144, 0, 7143592, 262144, 0, 7209128, 262144, 0, 7143593, 262144, 0, 7078058, 262144, 0, 7012522, 262144, 0, 6946987, 262144, 0, 6881451, 262144, 0, 6815916, 262144, 0, 6750380, 262144, 0, 6684845, 262144, 0, 6619309, 262144, 0, 6750381, 262144, 0, 6815917, 262144, 0, 6881452, 262144, 0, 6946988, 262144, 0, 7012523, 262144, 0, 7078059, 262144, 0, 7143594, 262144, 0, 7209130, 262144, 0, 7209131, 262144, 0, 7143595, 262144, 0, 7078060, 262144, 0, 7012524, 262144, 0, 6946989, 262144, 0, 6881453, 262144, 0, 5439668, 262144, 0, 5505205, 262144, 0, 5570740, 262144, 0, 5636277, 262144, 0, 5701812, 262144, 0, 5767349, 262144, 0, 5832884, 262144, 0, 5898420, 262144, 0, 5963956, 262144, 0, 6029492, 262144, 0, 6095028, 262144, 0, 6160564, 262144, 0, 6226099, 262144, 0, 6291635, 262144, 0, 6488242, 262144, 0, 6553779, 262144, 0, 6619315, 262144, 0, 6684852, 262144, 0, 6750388, 262144, 0, 6684853, 262144, 0, 6619317, 262144, 0, 6553782, 262144, 0, 6488246, 262144, 0, 6422710, 262144, 0, 6357174, 262144, 0, 6291638, 262144, 0, 6226102, 262144, 0, 6160566, 262144, 0, 6095030, 262144, 0, 6029495, 262144, 0, 5963958, 262144, 0, 5898423, 262144, 0, 5832887, 262144, 0, 5767351, 262144, 0, 5701815, 262144, 0, 5636280, 262144, 0, 5570744, 262144, 0, 5505208, 262144, 0, 5439671, 262144, 0, 5374135, 262144, 0, 5308599, 262144, 0, 5243063, 262144, 0, 5177526, 262144, 0, 5243062, 262144, 0, 5308598, 262144, 0, 5374134, 262144, 0, 5308597, 262144, 0, 5374133, 262144, 0, 6619314, 262144, 0, 6684851, 262144, 0, 6750387, 262144, 0, 6815923, 262144, 0, 6881459, 262144, 0, 6946995, 262144, 0, 6815924, 262144, 0, 6881460, 262144, 0, 6946996, 262144, 0, 6946997, 262144, 0, 6881461, 262144, 0, 6815925, 262144, 0, 6750389, 262144, 0, 6160565, 262144, 0, 6095029, 262144, 0, 6029494, 262144, 0, 5963957, 262144, 0, 5898422, 262144, 0, 5832886, 262144, 0, 5767350, 262144, 0, 5701814, 262144, 0, 5636279, 262144, 0, 5570743, 262144, 0, 5505207, 262144, 0, 5439670, 262144, 0, 5505206, 262144, 0, 5439669, 262144, 0, 5570741, 262144, 0, 5636278, 262144, 0, 5570742, 262144, 0, 5701813, 262144, 0, 5832885, 262144, 0, 5898421, 262144, 0, 6029493, 262144, 0, 6226100, 262144, 0, 6291636, 262144, 0, 6357171, 262144, 0, 6422707, 262144, 0, 6488243, 262144, 0, 6422708, 262144, 0, 6357172, 262144, 0, 6291637, 262144, 0, 6226101, 262144, 0, 6357173, 262144, 0, 6422709, 262144, 0, 6488244, 262144, 0, 6553780, 262144, 0, 6619316, 262144, 0, 6553781, 262144, 0, 6488245, 262144, 0, 6553772, 262144, 0, 6357160, 262144, 0, 7340201, 262144, 0, 7405736, 262144, 0, 6553765, 262144, 0, 6488229, 262144, 0, 6422694, 262144, 0, 6357158, 262144, 0)
+layer_1/name = "main"
+layer_1/enabled = true
+layer_1/modulate = Color(1, 1, 1, 1)
+layer_1/y_sort_enabled = true
+layer_1/y_sort_origin = 0
+layer_1/z_index = 2
+layer_1/tile_data = PackedInt32Array(6422700, 65536, 1, 5570735, 131072, 0, 5636271, 131072, 0, 5701806, 131072, 0, 5767342, 131072, 0, 5832877, 131072, 0, 5767341, 131072, 0, 5832876, 131072, 0, 5898413, 131072, 0, 5963948, 131072, 0, 6029484, 131072, 0, 6095019, 131072, 0, 6029483, 131072, 0, 5963947, 131072, 0, 5898412, 131072, 0, 5701805, 131072, 0, 5636270, 131072, 0, 5570734, 131072, 0, 5505198, 131072, 0, 5570733, 131072, 0, 5505197, 131072, 0, 5439661, 131072, 0, 5374126, 131072, 0, 5308590, 131072, 0, 5374127, 131072, 0, 5308591, 131072, 0, 5439662, 131072, 0, 5439663, 131072, 0, 5374128, 131072, 0, 5505199, 131072, 0, 5243056, 131072, 0, 5177519, 131072, 0, 5111984, 131072, 0, 5046448, 131072, 0, 5111985, 131072, 0, 5046449, 131072, 0, 4980913, 131072, 0, 5177520, 131072, 0, 4980914, 131072, 0, 5046450, 131072, 0, 5111986, 131072, 0, 5177521, 196608, 0, 5243057, 196608, 0, 5308592, 196608, 0, 5374129, 196608, 0, 5439664, 196608, 0, 5505200, 196608, 0, 5570736, 196608, 0, 5636272, 196608, 0, 5701807, 196608, 0, 5767343, 196608, 0, 5832878, 196608, 0, 5898414, 196608, 0, 5963949, 196608, 0, 6029486, 196608, 0, 6095021, 196608, 0, 6029485, 196608, 0, 6095020, 196608, 0, 6160556, 196608, 0, 6160557, 196608, 0, 5963950, 196608, 0, 5898415, 196608, 0, 6029487, 196608, 0, 6095022, 196608, 0, 6160558, 196608, 0, 5832874, 131072, 0, 5898411, 131072, 0, 5963946, 131072, 0, 5898410, 131072, 0, 5963945, 131072, 0, 6029482, 131072, 0, 6095017, 196608, 0, 6029481, 131072, 0, 6160554, 196608, 0, 6095018, 196608, 0, 6160555, 196608, 0, 7012523, 196608, 1, 6946987, 196608, 1, 6881450, 196608, 1, 6946986, 196608, 1, 7078059, 196608, 1, 7012522, 196608, 1, 6619301, 65536, 3, 7078056, 65536, 2, 6226088, 262144, 1, 6291630, 262144, 1, 6357161, 262144, 2, 6422698, 262144, 2, 6619309, 262144, 3, 6226093, 196608, 3, 6226092, 196608, 3, 6291629, 196608, 3, 6553767, 327680, 1, 6488231, 327680, 2, 6553768, 327680, 2, 6619303, 327680, 1)
+
+[node name="territory" type="TileMap" parent="."]
+modulate = Color(1, 1, 1, 0.588235)
+y_sort_enabled = true
+texture_filter = 1
+tile_set = SubResource("TileSet_k6le4")
+format = 2
+layer_0/name = "territory"
+layer_0/y_sort_enabled = true
+layer_0/z_index = 1
+layer_0/tile_data = PackedInt32Array(6422697, 0, 0, 6488233, 0, 0, 6553769, 0, 0, 6553768, 0, 0, 6488231, 0, 0, 6422696, 0, 0, 6357160, 0, 0, 6488232, 0, 0, 6619303, 0, 0, 6553767, 0, 0, 6684840, 0, 0, 6619304, 0, 0, 6553765, 0, 0, 6488229, 0, 0, 6422694, 0, 0, 6357158, 0, 0, 6291623, 0, 0, 6226087, 0, 0, 6160552, 0, 0, 6226088, 0, 0, 6291624, 0, 0, 6619301, 0, 0, 6684837, 0, 0, 6553766, 0, 0, 6488230, 0, 0, 6422695, 0, 0, 6357159, 0, 0, 6750372, 0, 0, 6750373, 0, 0, 6684838, 0, 0, 6619302, 0, 0, 6815909, 0, 0, 6881444, 0, 0, 6946981, 0, 0, 7012517, 0, 0, 7078053, 0, 0, 7078054, 0, 0, 7012518, 0, 0, 6946982, 0, 0, 6881446, 0, 0, 6815910, 0, 0, 6750374, 0, 0, 6881445, 0, 0, 6684839, 0, 0, 6750375, 0, 0, 6815911, 0, 0, 6357161, 0, 0, 6291625, 0, 0, 6291626, 0, 0, 6357162, 0, 0, 6422698, 0, 0, 7143589, 0, 0, 7209126, 0, 0, 7143590, 0, 0, 7078055, 0, 0, 7012519, 0, 0, 6946983, 0, 0, 6881447, 0, 0, 6815912, 0, 0, 6750376, 0, 0, 6619305, 0, 0, 6553770, 0, 0, 6488234, 0, 0, 6422699, 0, 0, 6357163, 0, 0, 6684841, 0, 0, 6881448, 0, 0, 6946984, 0, 0, 6815913, 0, 0, 6750377, 0, 0, 6291628, 0, 0, 6357164, 0, 0, 6422700, 0, 0, 6488235, 0, 0, 6553771, 0, 0, 6619306, 0, 0, 6684842, 0, 0, 7209127, 0, 0, 7274663, 0, 0, 7274662, 0, 0, 7340199, 0, 0, 7405735, 0, 0, 7340200, 0, 0, 7274664, 0, 0, 7209128, 0, 0, 7143592, 0, 0, 7078056, 0, 0, 7143591, 0, 0, 7405736, 0, 0, 7340201, 0, 0, 7274665, 0, 0, 7209129, 0, 0, 7143593, 0, 0, 7078057, 0, 0, 7012520, 0, 0, 7209130, 0, 0, 7274666, 0, 0, 7340202, 0, 0, 7143594, 0, 0, 7078058, 0, 0, 7012521, 0, 0, 6946985, 0, 0, 6881449, 0, 0, 6946986, 0, 0, 7012522, 0, 0, 7078059, 0, 0, 7143595, 0, 0, 7209131, 0, 0, 7274667, 0, 0, 7209132, 0, 0, 7340203, 0, 0, 7340204, 0, 0, 7274668, 0, 0, 6684843, 0, 0, 6750378, 0, 0, 6815914, 0, 0, 6619307, 0, 0, 6553772, 0, 0, 6291629, 0, 0, 6226093, 0, 0, 6291630, 0, 0, 6357165, 0, 0, 6422701, 0, 0, 6488236, 0, 0, 6422702, 0, 0, 6357166, 0, 0, 6422703, 0, 0, 6488238, 0, 0, 6553774, 0, 0, 6488237, 0, 0, 6553773, 0, 0, 6619308, 0, 0, 6684844, 0, 0, 6750379, 0, 0, 6815915, 0, 0, 6881450, 0, 0, 6881451, 0, 0, 6815916, 0, 0, 6750380, 0, 0, 6684845, 0, 0, 6619309, 0, 0, 6946987, 0, 0, 6684846, 0, 0, 6750381, 0, 0, 6815917, 0, 0, 6881452, 0, 0, 6946988, 0, 0, 7012523, 0, 0, 7078060, 0, 0, 7012524, 0, 0, 7078061, 0, 0, 7012525, 0, 0, 6946989, 0, 0, 6881453, 0, 0, 6815918, 0, 0, 6881454, 0, 0, 6946990, 0, 0, 7143596, 0, 0, 6619310, 0, 0, 6750382, 0, 0, 6946995, 65536, 0, 6881459, 65536, 0, 6815924, 65536, 0, 6815923, 65536, 0, 6750387, 65536, 0, 6750388, 65536, 0, 6815925, 65536, 0, 6881461, 65536, 0, 6881460, 65536, 0, 6946996, 65536, 0, 6946997, 65536, 0, 6750389, 65536, 0, 6684853, 65536, 0, 6619316, 65536, 0, 6553780, 65536, 0, 6488243, 65536, 0, 6422707, 65536, 0, 6488242, 65536, 0, 6553779, 65536, 0, 6619314, 65536, 0, 6684851, 65536, 0, 6619315, 65536, 0, 6684852, 65536, 0, 6291635, 65536, 0, 6226099, 65536, 0, 6160564, 65536, 0, 6095028, 65536, 0, 6029493, 65536, 0, 6357171, 65536, 0, 6291636, 65536, 0, 6226100, 65536, 0, 6160565, 65536, 0, 6095029, 65536, 0, 6029494, 65536, 0, 6357172, 65536, 0, 6422708, 65536, 0, 5963958, 65536, 0, 6095030, 65536, 0, 6160566, 65536, 0, 6226101, 65536, 0, 6291637, 65536, 0, 6029495, 65536, 0, 6422709, 65536, 0, 6357173, 65536, 0, 6291638, 65536, 0, 6226102, 65536, 0, 6488244, 65536, 0, 6553781, 65536, 0, 6619317, 65536, 0, 6553782, 65536, 0, 6488246, 65536, 0, 6422710, 65536, 0, 6357174, 65536, 0, 6488245, 65536, 0)
+
+[node name="selection" type="Sprite2D" parent="."]
+visible = false
+z_index = 2
+position = Vector2(5376, 752)
+texture = ExtResource("4_4c1nb")
+
+[node name="selection_tall" type="Sprite2D" parent="."]
+visible = false
+z_index = 2
+position = Vector2(5424, 744)
+texture = ExtResource("5_gq3p3")
+
+[node name="cam" type="Camera2D" parent="."]
+position = Vector2(5601, 718)
+zoom = Vector2(2, 2)
+position_smoothing_enabled = true
+position_smoothing_speed = 10.0
+script = ExtResource("6_qgcfw")
+
+[node name="gui" type="CanvasLayer" parent="."]
+script = ExtResource("7_t4wpl")
+
+[node name="panel" type="NinePatchRect" parent="gui"]
+visible = false
+offset_left = 162.0
+offset_top = 42.0
+offset_right = 226.0
+offset_bottom = 106.0
+scale = Vector2(2, 2)
+texture = ExtResource("8_c6jly")
+patch_margin_left = 11
+patch_margin_top = 5
+patch_margin_right = 11
+patch_margin_bottom = 5
+
+[node name="ui_main" type="Control" parent="gui"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 1280.0
+offset_bottom = 720.0
+mouse_filter = 2
+
+[node name="bg" type="TextureRect" parent="gui/ui_main"]
+layout_mode = 0
+offset_right = 1280.0
+offset_bottom = 720.0
+texture = ExtResource("4_7an5g")
+
+[node name="tooltip" type="NinePatchRect" parent="gui/ui_main"]
+visible = false
+layout_mode = 0
+offset_left = 6.0
+offset_top = -172.0
+offset_right = 70.0
+offset_bottom = -108.0
+scale = Vector2(2, 2)
+texture = ExtResource("8_c6jly")
+patch_margin_left = 11
+patch_margin_top = 5
+patch_margin_right = 11
+patch_margin_bottom = 5
+script = ExtResource("13_4ll28")
+
+[node name="time_control" type="Control" parent="gui/ui_main"]
+anchors_preset = 0
+offset_left = 998.0
+offset_right = 1280.0
+offset_bottom = 32.0
+
+[node name="timestamp" type="Label" parent="gui/ui_main/time_control"]
+layout_mode = 0
+offset_left = 57.0
+offset_top = 3.0
+offset_right = 369.0
+offset_bottom = 58.0
+scale = Vector2(0.35, 0.35)
+pivot_offset = Vector2(156, 0)
+mouse_filter = 0
+theme = ExtResource("7_ppt5l")
+text = "00 : 12/12/00"
+horizontal_alignment = 1
+vertical_alignment = 2
+
+[node name="time_mutliplier" type="Label" parent="gui/ui_main/time_control"]
+layout_mode = 0
+offset_left = 57.0
+offset_top = 3.0
+offset_right = 146.0
+offset_bottom = 58.0
+scale = Vector2(0.349949, 0.349949)
+pivot_offset = Vector2(41.1807, 0)
+mouse_filter = 0
+theme = ExtResource("7_ppt5l")
+text = "0.5x"
+horizontal_alignment = 1
+vertical_alignment = 2
+
+[node name="timestamp_tooltip" type="TextureRect" parent="gui/ui_main/time_control"]
+visible = false
+layout_mode = 0
+offset_left = 150.0
+offset_top = 28.0
+offset_right = 216.0
+offset_bottom = 41.0
+scale = Vector2(2, 2)
+texture = ExtResource("9_gqipu")
+
+[node name="time_plus" type="TextureButton" parent="gui/ui_main/time_control"]
+layout_mode = 0
+offset_left = 120.0
+offset_top = 2.0
+offset_right = 131.0
+offset_bottom = 13.0
+scale = Vector2(2, 2)
+shortcut = SubResource("Shortcut_1gk37")
+texture_normal = ExtResource("15_0swji")
+texture_pressed = ExtResource("16_6qo23")
+texture_hover = ExtResource("17_x5i0e")
+
+[node name="time_minus" type="TextureButton" parent="gui/ui_main/time_control"]
+layout_mode = 0
+offset_left = 54.0
+offset_top = 2.0
+offset_right = 65.0
+offset_bottom = 13.0
+scale = Vector2(2, 2)
+shortcut = SubResource("Shortcut_uj8gq")
+texture_normal = ExtResource("18_qy5od")
+texture_pressed = ExtResource("19_0jycx")
+texture_hover = ExtResource("20_io30d")
+
+[node name="pause_overlay" type="Panel" parent="gui/ui_main/time_control"]
+visible = false
+layout_mode = 0
+offset_left = 44.0
+offset_top = -3.0
+offset_right = 287.0
+offset_bottom = 28.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_h06s7")
+
+[node name="pause_label" type="Label" parent="gui/ui_main/time_control/pause_overlay"]
+layout_mode = 0
+offset_top = 6.0
+offset_right = 144.0
+offset_bottom = 61.0
+scale = Vector2(0.349949, 0.349949)
+pivot_offset = Vector2(41.1807, 0)
+mouse_filter = 0
+theme = ExtResource("7_ppt5l")
+text = "PAUSED"
+horizontal_alignment = 1
+vertical_alignment = 2
+
+[node name="nation_info" type="Control" parent="gui/ui_main"]
+anchors_preset = 0
+offset_right = 161.0
+offset_bottom = 353.0
+
+[node name="flag" type="TextureRect" parent="gui/ui_main/nation_info"]
+layout_mode = 0
+offset_left = 22.0
+offset_top = 18.0
+offset_right = 72.0
+offset_bottom = 116.0
+texture = ExtResource("10_g3g2t")
+
+[node name="humanity" type="Label" parent="gui/ui_main/nation_info"]
+layout_mode = 0
+offset_left = 54.0
+offset_top = 15.0
+offset_right = 244.0
+offset_bottom = 70.0
+scale = Vector2(0.349949, 0.349949)
+pivot_offset = Vector2(41.1807, 0)
+mouse_filter = 0
+theme = ExtResource("7_ppt5l")
+text = "5000"
+horizontal_alignment = 1
+vertical_alignment = 2
+
+[node name="ether" type="Label" parent="gui/ui_main/nation_info"]
+layout_mode = 0
+offset_left = -10.0
+offset_top = 141.0
+offset_right = 134.0
+offset_bottom = 188.0
+scale = Vector2(0.301354, 0.301354)
+pivot_offset = Vector2(41.1807, 0)
+mouse_filter = 0
+theme = ExtResource("7_ppt5l")
+text = "99K+99"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="fuel" type="Label" parent="gui/ui_main/nation_info"]
+layout_mode = 0
+offset_left = -10.0
+offset_top = 167.0
+offset_right = 134.0
+offset_bottom = 214.0
+scale = Vector2(0.301354, 0.301354)
+pivot_offset = Vector2(41.1807, 0)
+mouse_filter = 0
+theme = ExtResource("7_ppt5l")
+text = "99K+99"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="metals" type="Label" parent="gui/ui_main/nation_info"]
+layout_mode = 0
+offset_left = -10.0
+offset_top = 192.0
+offset_right = 134.0
+offset_bottom = 239.0
+scale = Vector2(0.301354, 0.301354)
+pivot_offset = Vector2(41.1807, 0)
+mouse_filter = 0
+theme = ExtResource("7_ppt5l")
+text = "99K+99"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="rare_metals" type="Label" parent="gui/ui_main/nation_info"]
+layout_mode = 0
+offset_left = -10.0
+offset_top = 219.0
+offset_right = 134.0
+offset_bottom = 266.0
+scale = Vector2(0.301354, 0.301354)
+pivot_offset = Vector2(41.1807, 0)
+mouse_filter = 0
+theme = ExtResource("7_ppt5l")
+text = "99K+99"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="organics" type="Label" parent="gui/ui_main/nation_info"]
+layout_mode = 0
+offset_left = -10.0
+offset_top = 245.0
+offset_right = 134.0
+offset_bottom = 292.0
+scale = Vector2(0.301354, 0.301354)
+pivot_offset = Vector2(41.1807, 0)
+mouse_filter = 0
+theme = ExtResource("7_ppt5l")
+text = "99K+99"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="commodities" type="Label" parent="gui/ui_main/nation_info"]
+layout_mode = 0
+offset_left = -10.0
+offset_top = 271.0
+offset_right = 134.0
+offset_bottom = 318.0
+scale = Vector2(0.301354, 0.301354)
+pivot_offset = Vector2(41.1807, 0)
+mouse_filter = 0
+theme = ExtResource("7_ppt5l")
+text = "99K+99"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="food" type="Label" parent="gui/ui_main/nation_info"]
+layout_mode = 0
+offset_left = -10.0
+offset_top = 297.0
+offset_right = 134.0
+offset_bottom = 344.0
+scale = Vector2(0.301354, 0.301354)
+pivot_offset = Vector2(41.1807, 0)
+mouse_filter = 0
+theme = ExtResource("7_ppt5l")
+text = "99K+99"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="resource_tooltip" type="NinePatchRect" parent="gui/ui_main/nation_info"]
+visible = false
+layout_mode = 0
+offset_left = 78.0
+offset_top = 133.0
+offset_right = 142.0
+offset_bottom = 197.0
+scale = Vector2(2, 2)
+texture = ExtResource("8_c6jly")
+patch_margin_left = 11
+patch_margin_top = 5
+patch_margin_right = 11
+patch_margin_bottom = 5
+
+[node name="toolbar" type="Control" parent="gui/ui_main"]
+anchors_preset = 0
+offset_left = 1040.0
+offset_top = 32.0
+offset_right = 1280.0
+offset_bottom = 66.0
+
+[node name="hbox" type="HBoxContainer" parent="gui/ui_main/toolbar"]
+layout_mode = 0
+offset_left = 48.0
+offset_top = 4.0
+offset_right = 143.0
+offset_bottom = 15.0
+scale = Vector2(2, 2)
+alignment = 1
+
+[node name="build" type="TextureButton" parent="gui/ui_main/toolbar/hbox"]
+layout_mode = 2
+toggle_mode = true
+button_group = ExtResource("22_yguin")
+texture_normal = ExtResource("23_tx3r0")
+texture_pressed = ExtResource("24_l22uy")
+texture_hover = ExtResource("25_woi3f")
+
+[node name="research" type="TextureButton" parent="gui/ui_main/toolbar/hbox"]
+layout_mode = 2
+toggle_mode = true
+button_group = ExtResource("22_yguin")
+texture_normal = ExtResource("26_cvkgo")
+texture_pressed = ExtResource("27_hmv6k")
+texture_hover = ExtResource("28_xd32d")
+
+[node name="military" type="TextureButton" parent="gui/ui_main/toolbar/hbox"]
+layout_mode = 2
+toggle_mode = true
+button_group = ExtResource("22_yguin")
+texture_normal = ExtResource("30_gx256")
+texture_pressed = ExtResource("31_oc4p8")
+texture_hover = ExtResource("32_5hcpj")
+
+[node name="build_menu" type="Control" parent="gui/ui_main/toolbar"]
+visible = false
+anchors_preset = 0
+offset_left = 48.0
+offset_top = 34.0
+offset_right = 224.0
+offset_bottom = 288.0
+script = ExtResource("26_23yrg")
+
+[node name="bg" type="TextureRect" parent="gui/ui_main/toolbar/build_menu"]
+layout_mode = 0
+offset_right = 176.0
+offset_bottom = 254.0
+texture = ExtResource("27_0brow")
+
+[node name="buildings" type="GridContainer" parent="gui/ui_main/toolbar/build_menu"]
+layout_mode = 0
+offset_left = 12.0
+offset_top = 4.0
+offset_right = 88.0
+offset_bottom = 44.0
+scale = Vector2(2, 2)
+columns = 4
+
+[node name="village" type="TextureButton" parent="gui/ui_main/toolbar/build_menu/buildings"]
+layout_mode = 2
+toggle_mode = true
+button_group = ExtResource("22_xeedy")
+texture_normal = ExtResource("27_k7o30")
+texture_pressed = ExtResource("28_gesqh")
+texture_hover = ExtResource("29_tuxie")
+script = ExtResource("32_vrk3a")
+building = Vector2i(1, 3)
+
+[node name="tex" type="TextureRect" parent="gui/ui_main/toolbar/build_menu/buildings/village"]
+layout_mode = 0
+offset_left = 1.0
+offset_top = 1.0
+offset_right = 33.0
+offset_bottom = 33.0
+scale = Vector2(0.45, 0.45)
+texture = SubResource("AtlasTexture_40pm2")
+
+[node name="farm" type="TextureButton" parent="gui/ui_main/toolbar/build_menu/buildings"]
+layout_mode = 2
+toggle_mode = true
+button_group = ExtResource("22_xeedy")
+texture_normal = ExtResource("27_k7o30")
+texture_pressed = ExtResource("28_gesqh")
+texture_hover = ExtResource("29_tuxie")
+script = ExtResource("32_vrk3a")
+
+[node name="tex" type="TextureRect" parent="gui/ui_main/toolbar/build_menu/buildings/farm"]
+layout_mode = 0
+offset_left = 1.0
+offset_top = 1.0
+offset_right = 33.0
+offset_bottom = 33.0
+scale = Vector2(0.45, 0.45)
+texture = SubResource("AtlasTexture_pcra2")
+
+[node name="forestry_district" type="TextureButton" parent="gui/ui_main/toolbar/build_menu/buildings"]
+layout_mode = 2
+toggle_mode = true
+button_group = ExtResource("22_xeedy")
+texture_normal = ExtResource("27_k7o30")
+texture_pressed = ExtResource("28_gesqh")
+texture_hover = ExtResource("29_tuxie")
+script = ExtResource("32_vrk3a")
+building = Vector2i(3, 3)
+
+[node name="tex" type="TextureRect" parent="gui/ui_main/toolbar/build_menu/buildings/forestry_district"]
+layout_mode = 0
+offset_left = 1.0
+offset_top = 1.0
+offset_right = 33.0
+offset_bottom = 33.0
+scale = Vector2(0.45, 0.45)
+texture = SubResource("AtlasTexture_8rr7f")
+
+[node name="coal_mine" type="TextureButton" parent="gui/ui_main/toolbar/build_menu/buildings"]
+layout_mode = 2
+toggle_mode = true
+button_group = ExtResource("22_xeedy")
+texture_normal = ExtResource("27_k7o30")
+texture_pressed = ExtResource("28_gesqh")
+texture_hover = ExtResource("29_tuxie")
+script = ExtResource("32_vrk3a")
+building = Vector2i(4, 1)
+
+[node name="tex" type="TextureRect" parent="gui/ui_main/toolbar/build_menu/buildings/coal_mine"]
+layout_mode = 0
+offset_left = 1.0
+offset_top = 1.0
+offset_right = 33.0
+offset_bottom = 33.0
+scale = Vector2(0.45, 0.45)
+texture = SubResource("AtlasTexture_c21a3")
+
+[node name="metals_mine" type="TextureButton" parent="gui/ui_main/toolbar/build_menu/buildings"]
+layout_mode = 2
+toggle_mode = true
+button_group = ExtResource("22_xeedy")
+texture_normal = ExtResource("27_k7o30")
+texture_pressed = ExtResource("28_gesqh")
+texture_hover = ExtResource("29_tuxie")
+script = ExtResource("32_vrk3a")
+building = Vector2i(4, 2)
+
+[node name="tex" type="TextureRect" parent="gui/ui_main/toolbar/build_menu/buildings/metals_mine"]
+layout_mode = 0
+offset_left = 1.0
+offset_top = 1.0
+offset_right = 33.0
+offset_bottom = 33.0
+scale = Vector2(0.45, 0.45)
+texture = SubResource("AtlasTexture_c21a3")
+
+[node name="rare_metals_mine" type="TextureButton" parent="gui/ui_main/toolbar/build_menu/buildings"]
+layout_mode = 2
+toggle_mode = true
+button_group = ExtResource("22_xeedy")
+texture_normal = ExtResource("27_k7o30")
+texture_pressed = ExtResource("28_gesqh")
+texture_hover = ExtResource("29_tuxie")
+script = ExtResource("32_vrk3a")
+building = Vector2i(4, 3)
+
+[node name="tex" type="TextureRect" parent="gui/ui_main/toolbar/build_menu/buildings/rare_metals_mine"]
+layout_mode = 0
+offset_left = 1.0
+offset_top = 1.0
+offset_right = 33.0
+offset_bottom = 33.0
+scale = Vector2(0.45, 0.45)
+texture = SubResource("AtlasTexture_c21a3")
+
+[node name="civ_factory" type="TextureButton" parent="gui/ui_main/toolbar/build_menu/buildings"]
+layout_mode = 2
+toggle_mode = true
+button_group = ExtResource("22_xeedy")
+texture_normal = ExtResource("27_k7o30")
+texture_pressed = ExtResource("28_gesqh")
+texture_hover = ExtResource("29_tuxie")
+script = ExtResource("32_vrk3a")
+building = Vector2i(5, 1)
+
+[node name="tex" type="TextureRect" parent="gui/ui_main/toolbar/build_menu/buildings/civ_factory"]
+layout_mode = 0
+offset_left = 1.0
+offset_top = 1.0
+offset_right = 33.0
+offset_bottom = 33.0
+scale = Vector2(0.45, 0.45)
+texture = SubResource("AtlasTexture_c21a3")
+
+[node name="mat_factory" type="TextureButton" parent="gui/ui_main/toolbar/build_menu/buildings"]
+layout_mode = 2
+toggle_mode = true
+button_group = ExtResource("22_xeedy")
+texture_normal = ExtResource("27_k7o30")
+texture_pressed = ExtResource("28_gesqh")
+texture_hover = ExtResource("29_tuxie")
+script = ExtResource("32_vrk3a")
+building = Vector2i(5, 2)
+
+[node name="tex" type="TextureRect" parent="gui/ui_main/toolbar/build_menu/buildings/mat_factory"]
+layout_mode = 0
+offset_left = 1.0
+offset_top = 1.0
+offset_right = 33.0
+offset_bottom = 33.0
+scale = Vector2(0.45, 0.45)
+texture = SubResource("AtlasTexture_c21a3")
+
+[node name="build_info" type="TextureRect" parent="gui/ui_main/toolbar/build_menu"]
+visible = false
+layout_mode = 0
+offset_left = -160.0
+offset_top = 32.0
+offset_bottom = 224.0
+texture = ExtResource("32_b8oyt")
+
+[node name="name" type="Label" parent="gui/ui_main/toolbar/build_menu/build_info"]
+layout_mode = 0
+offset_left = -87.0
+offset_top = 6.0
+offset_right = 312.0
+offset_bottom = 61.0
+scale = Vector2(0.35, 0.35)
+pivot_offset = Vector2(156, 0)
+mouse_filter = 0
+theme = ExtResource("7_ppt5l")
+text = "building_name"
+vertical_alignment = 2
+
+[node name="cost_label" type="Label" parent="gui/ui_main/toolbar/build_menu/build_info"]
+layout_mode = 0
+offset_left = -98.0
+offset_top = 24.0
+offset_right = -6.0
+offset_bottom = 79.0
+scale = Vector2(0.281827, 0.281827)
+pivot_offset = Vector2(156, 0)
+mouse_filter = 0
+theme = ExtResource("7_ppt5l")
+text = "cost:"
+vertical_alignment = 2
+
+[node name="prod_label" type="Label" parent="gui/ui_main/toolbar/build_menu/build_info"]
+layout_mode = 0
+offset_left = -98.0
+offset_top = 63.0
+offset_right = -2.0
+offset_bottom = 118.0
+scale = Vector2(0.281827, 0.281827)
+pivot_offset = Vector2(156, 0)
+mouse_filter = 0
+theme = ExtResource("7_ppt5l")
+text = "prod:"
+vertical_alignment = 2
+
+[node name="desc" type="RichTextLabel" parent="gui/ui_main/toolbar/build_menu/build_info"]
+layout_mode = 0
+offset_left = -98.0
+offset_top = 105.0
+offset_right = 395.0
+offset_bottom = 311.0
+scale = Vector2(0.281827, 0.281827)
+pivot_offset = Vector2(156, 0)
+theme = ExtResource("7_ppt5l")
+theme_override_fonts/normal_font = ExtResource("34_1hpea")
+theme_override_font_sizes/normal_font_size = 36
+text = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+
+[node name="build_time" type="Label" parent="gui/ui_main/toolbar/build_menu/build_info"]
+layout_mode = 0
+offset_left = -95.0
+offset_top = 165.0
+offset_right = 304.0
+offset_bottom = 220.0
+scale = Vector2(0.301368, 0.301368)
+pivot_offset = Vector2(156, 0)
+mouse_filter = 0
+theme = ExtResource("7_ppt5l")
+text = "build time: 150"
+vertical_alignment = 2
+
+[node name="costs" type="GridContainer" parent="gui/ui_main/toolbar/build_menu/build_info"]
+layout_mode = 0
+offset_left = 45.0
+offset_top = 28.0
+offset_right = 392.0
+offset_bottom = 177.0
+scale = Vector2(0.31437, 0.31437)
+columns = 3
+
+[node name="e_cost" type="HBoxContainer" parent="gui/ui_main/toolbar/build_menu/build_info/costs"]
+layout_mode = 2
+
+[node name="icon" type="TextureRect" parent="gui/ui_main/toolbar/build_menu/build_info/costs/e_cost"]
+layout_direction = 1
+layout_mode = 2
+texture = ExtResource("33_x67at")
+expand_mode = 3
+
+[node name="label" type="Label" parent="gui/ui_main/toolbar/build_menu/build_info/costs/e_cost"]
+layout_mode = 2
+mouse_filter = 0
+theme = ExtResource("7_ppt5l")
+text = "100"
+vertical_alignment = 2
+
+[node name="fu_cost" type="HBoxContainer" parent="gui/ui_main/toolbar/build_menu/build_info/costs"]
+layout_mode = 2
+
+[node name="icon" type="TextureRect" parent="gui/ui_main/toolbar/build_menu/build_info/costs/fu_cost"]
+layout_direction = 1
+layout_mode = 2
+texture = ExtResource("34_t28rp")
+expand_mode = 3
+
+[node name="label" type="Label" parent="gui/ui_main/toolbar/build_menu/build_info/costs/fu_cost"]
+layout_mode = 2
+mouse_filter = 0
+theme = ExtResource("7_ppt5l")
+text = "100"
+vertical_alignment = 2
+
+[node name="m_cost" type="HBoxContainer" parent="gui/ui_main/toolbar/build_menu/build_info/costs"]
+layout_mode = 2
+
+[node name="icon" type="TextureRect" parent="gui/ui_main/toolbar/build_menu/build_info/costs/m_cost"]
+layout_direction = 1
+layout_mode = 2
+texture = ExtResource("35_v2tub")
+expand_mode = 3
+
+[node name="label" type="Label" parent="gui/ui_main/toolbar/build_menu/build_info/costs/m_cost"]
+layout_mode = 2
+mouse_filter = 0
+theme = ExtResource("7_ppt5l")
+text = "100"
+vertical_alignment = 2
+
+[node name="r_cost" type="HBoxContainer" parent="gui/ui_main/toolbar/build_menu/build_info/costs"]
+layout_mode = 2
+
+[node name="icon" type="TextureRect" parent="gui/ui_main/toolbar/build_menu/build_info/costs/r_cost"]
+layout_direction = 1
+layout_mode = 2
+texture = ExtResource("36_q3sod")
+expand_mode = 3
+
+[node name="label" type="Label" parent="gui/ui_main/toolbar/build_menu/build_info/costs/r_cost"]
+layout_mode = 2
+mouse_filter = 0
+theme = ExtResource("7_ppt5l")
+text = "100"
+vertical_alignment = 2
+
+[node name="o_cost" type="HBoxContainer" parent="gui/ui_main/toolbar/build_menu/build_info/costs"]
+layout_mode = 2
+
+[node name="icon" type="TextureRect" parent="gui/ui_main/toolbar/build_menu/build_info/costs/o_cost"]
+layout_direction = 1
+layout_mode = 2
+texture = ExtResource("37_l2fe2")
+expand_mode = 3
+
+[node name="label" type="Label" parent="gui/ui_main/toolbar/build_menu/build_info/costs/o_cost"]
+layout_mode = 2
+mouse_filter = 0
+theme = ExtResource("7_ppt5l")
+text = "100"
+vertical_alignment = 2
+
+[node name="c_cost" type="HBoxContainer" parent="gui/ui_main/toolbar/build_menu/build_info/costs"]
+layout_mode = 2
+
+[node name="icon" type="TextureRect" parent="gui/ui_main/toolbar/build_menu/build_info/costs/c_cost"]
+layout_direction = 1
+layout_mode = 2
+texture = ExtResource("38_e2mpw")
+expand_mode = 3
+
+[node name="label" type="Label" parent="gui/ui_main/toolbar/build_menu/build_info/costs/c_cost"]
+layout_mode = 2
+mouse_filter = 0
+theme = ExtResource("7_ppt5l")
+text = "100"
+vertical_alignment = 2
+
+[node name="fo_cost" type="HBoxContainer" parent="gui/ui_main/toolbar/build_menu/build_info/costs"]
+visible = false
+layout_mode = 2
+
+[node name="icon" type="TextureRect" parent="gui/ui_main/toolbar/build_menu/build_info/costs/fo_cost"]
+layout_direction = 1
+layout_mode = 2
+texture = ExtResource("39_8fnc4")
+expand_mode = 3
+
+[node name="label" type="Label" parent="gui/ui_main/toolbar/build_menu/build_info/costs/fo_cost"]
+layout_mode = 2
+mouse_filter = 0
+theme = ExtResource("7_ppt5l")
+text = "100"
+vertical_alignment = 2
+
+[node name="prods" type="GridContainer" parent="gui/ui_main/toolbar/build_menu/build_info"]
+layout_mode = 0
+offset_left = 45.0
+offset_top = 68.0
+offset_right = 392.0
+offset_bottom = 217.0
+scale = Vector2(0.31437, 0.31437)
+columns = 3
+
+[node name="e_prod" type="HBoxContainer" parent="gui/ui_main/toolbar/build_menu/build_info/prods"]
+layout_mode = 2
+
+[node name="icon" type="TextureRect" parent="gui/ui_main/toolbar/build_menu/build_info/prods/e_prod"]
+layout_direction = 1
+layout_mode = 2
+texture = ExtResource("33_x67at")
+expand_mode = 3
+
+[node name="label" type="Label" parent="gui/ui_main/toolbar/build_menu/build_info/prods/e_prod"]
+layout_mode = 2
+mouse_filter = 0
+theme = ExtResource("7_ppt5l")
+text = "100"
+vertical_alignment = 2
+
+[node name="fu_prod" type="HBoxContainer" parent="gui/ui_main/toolbar/build_menu/build_info/prods"]
+layout_mode = 2
+
+[node name="icon" type="TextureRect" parent="gui/ui_main/toolbar/build_menu/build_info/prods/fu_prod"]
+layout_direction = 1
+layout_mode = 2
+texture = ExtResource("34_t28rp")
+expand_mode = 3
+
+[node name="label" type="Label" parent="gui/ui_main/toolbar/build_menu/build_info/prods/fu_prod"]
+layout_mode = 2
+mouse_filter = 0
+theme = ExtResource("7_ppt5l")
+text = "100"
+vertical_alignment = 2
+
+[node name="m_prod" type="HBoxContainer" parent="gui/ui_main/toolbar/build_menu/build_info/prods"]
+layout_mode = 2
+
+[node name="icon" type="TextureRect" parent="gui/ui_main/toolbar/build_menu/build_info/prods/m_prod"]
+layout_direction = 1
+layout_mode = 2
+texture = ExtResource("35_v2tub")
+expand_mode = 3
+
+[node name="label" type="Label" parent="gui/ui_main/toolbar/build_menu/build_info/prods/m_prod"]
+layout_mode = 2
+mouse_filter = 0
+theme = ExtResource("7_ppt5l")
+text = "100"
+vertical_alignment = 2
+
+[node name="r_prod" type="HBoxContainer" parent="gui/ui_main/toolbar/build_menu/build_info/prods"]
+layout_mode = 2
+
+[node name="icon" type="TextureRect" parent="gui/ui_main/toolbar/build_menu/build_info/prods/r_prod"]
+layout_direction = 1
+layout_mode = 2
+texture = ExtResource("36_q3sod")
+expand_mode = 3
+
+[node name="label" type="Label" parent="gui/ui_main/toolbar/build_menu/build_info/prods/r_prod"]
+layout_mode = 2
+mouse_filter = 0
+theme = ExtResource("7_ppt5l")
+text = "100"
+vertical_alignment = 2
+
+[node name="o_prod" type="HBoxContainer" parent="gui/ui_main/toolbar/build_menu/build_info/prods"]
+layout_mode = 2
+
+[node name="icon" type="TextureRect" parent="gui/ui_main/toolbar/build_menu/build_info/prods/o_prod"]
+layout_direction = 1
+layout_mode = 2
+texture = ExtResource("37_l2fe2")
+expand_mode = 3
+
+[node name="label" type="Label" parent="gui/ui_main/toolbar/build_menu/build_info/prods/o_prod"]
+layout_mode = 2
+mouse_filter = 0
+theme = ExtResource("7_ppt5l")
+text = "100"
+vertical_alignment = 2
+
+[node name="c_prod" type="HBoxContainer" parent="gui/ui_main/toolbar/build_menu/build_info/prods"]
+layout_mode = 2
+
+[node name="icon" type="TextureRect" parent="gui/ui_main/toolbar/build_menu/build_info/prods/c_prod"]
+layout_direction = 1
+layout_mode = 2
+texture = ExtResource("38_e2mpw")
+expand_mode = 3
+
+[node name="label" type="Label" parent="gui/ui_main/toolbar/build_menu/build_info/prods/c_prod"]
+layout_mode = 2
+mouse_filter = 0
+theme = ExtResource("7_ppt5l")
+text = "100"
+vertical_alignment = 2
+
+[node name="fo_prod" type="HBoxContainer" parent="gui/ui_main/toolbar/build_menu/build_info/prods"]
+visible = false
+layout_mode = 2
+
+[node name="icon" type="TextureRect" parent="gui/ui_main/toolbar/build_menu/build_info/prods/fo_prod"]
+layout_direction = 1
+layout_mode = 2
+texture = ExtResource("39_8fnc4")
+expand_mode = 3
+
+[node name="label" type="Label" parent="gui/ui_main/toolbar/build_menu/build_info/prods/fo_prod"]
+layout_mode = 2
+mouse_filter = 0
+theme = ExtResource("7_ppt5l")
+text = "100"
+vertical_alignment = 2
+
+[node name="research_menu" type="Control" parent="gui/ui_main/toolbar"]
+visible = false
+anchors_preset = 0
+offset_left = 48.0
+offset_top = 34.0
+offset_right = 224.0
+offset_bottom = 288.0
+
+[node name="bg" type="TextureRect" parent="gui/ui_main/toolbar/research_menu"]
+layout_mode = 0
+offset_right = 176.0
+offset_bottom = 254.0
+texture = ExtResource("46_ge1w8")
+
+[node name="event_list" type="Control" parent="gui/ui_main"]
+visible = false
+anchors_preset = 0
+offset_left = 1.0
+offset_top = 513.0
+offset_right = 254.0
+offset_bottom = 719.0
+
+[node name="scroll" type="ScrollContainer" parent="gui/ui_main/event_list"]
+layout_mode = 0
+offset_top = 6.0
+offset_right = 227.0
+offset_bottom = 208.0
+horizontal_scroll_mode = 0
+
+[node name="vbox" type="VBoxContainer" parent="gui/ui_main/event_list/scroll"]
+layout_mode = 2
+
+[connection signal="mouse_entered" from="gui/ui_main/time_control/timestamp" to="gui" method="_on_timestamp_mouse_entered"]
+[connection signal="mouse_exited" from="gui/ui_main/time_control/timestamp" to="gui" method="_on_timestamp_mouse_exited"]
+[connection signal="pressed" from="gui/ui_main/time_control/time_plus" to="." method="_on_time_plus_pressed"]
+[connection signal="pressed" from="gui/ui_main/time_control/time_minus" to="." method="_on_time_minus_pressed"]
+[connection signal="toggled" from="gui/ui_main/toolbar/hbox/build" to="gui" method="_on_build_toggled"]
+[connection signal="toggled" from="gui/ui_main/toolbar/hbox/research" to="gui" method="_on_research_toggled"]

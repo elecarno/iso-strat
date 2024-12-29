@@ -1,0 +1,12 @@
+[gd_scene load_steps=3 format=3 uid="uid://b0okadlm0vym7"]
+
+[ext_resource type="Theme" uid="uid://bcuc2y0om4e0o" path="res://ui/ui_theme.tres" id="1_8xc7g"]
+[ext_resource type="Script" path="res://main_scripts/event_listing.gd" id="2_qxsg0"]
+
+[node name="event_listing" type="Label"]
+mouse_filter = 0
+theme = ExtResource("1_8xc7g")
+theme_override_font_sizes/font_size = 15
+text = "building: 160d"
+vertical_alignment = 2
+script = ExtResource("2_qxsg0")

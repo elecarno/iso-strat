@@ -1,0 +1,4 @@
+res://default_env.tres
+res://testmap.tscn
+res://main_scripts/nation.gd
+res://ui/ui_theme.tres

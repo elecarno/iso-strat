@@ -1,0 +1,22 @@
+[gd_scene load_steps=3 format=3 uid="uid://c8y5y8wpwimnr"]
+
+[ext_resource type="Script" path="res://main_scripts/build_timer.gd" id="1_aqaf7"]
+[ext_resource type="Theme" uid="uid://bcuc2y0om4e0o" path="res://ui/ui_theme.tres" id="2_hey3v"]
+
+[node name="build_timer" type="Node2D"]
+script = ExtResource("1_aqaf7")
+
+[node name="time_label" type="Label" parent="."]
+z_index = 10
+y_sort_enabled = true
+offset_left = -197.0
+offset_top = -68.0
+offset_right = 204.0
+offset_bottom = 68.0
+scale = Vector2(0.1, 0.1)
+pivot_offset = Vector2(196.952, 67.96)
+theme = ExtResource("2_hey3v")
+text = "building_name
+999d"
+horizontal_alignment = 1
+vertical_alignment = 1
